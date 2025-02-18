@@ -26,10 +26,10 @@
     "firebase": "^11.0.1",
     "jose": "^5.9.6",
     "lucide-react": "^0.462.0",
-    "next": "15.0.2",
+    "next": "^15.1.7",
     "next-themes": "^0.4.3",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sonner": "^1.7.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
