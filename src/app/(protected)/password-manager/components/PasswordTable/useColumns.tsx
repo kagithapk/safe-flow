@@ -1,3 +1,5 @@
+'use client';
+
 import { ColumnDef } from '@tanstack/react-table';
 import {
 	ArrowUpDown,
@@ -96,9 +98,7 @@ export const useColumns: (
 			);
 		},
 		cell: ({ row }) => (
-			<div className="lowercase">
-				{new Date(row.getValue('updated_at')).toLocaleString()}
-			</div>
+			<div className="lowercase">{row.getValue('updated_at')}</div>
 		),
 	},
 	{

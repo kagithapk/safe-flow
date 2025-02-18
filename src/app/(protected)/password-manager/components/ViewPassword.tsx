@@ -32,34 +32,38 @@ export const ViewPassword: FC<IViewPassword> = ({
 
 	return (
 		<Dialog open={open} onOpenChange={onOpenChange}>
-			<DialogContent aria-describedby={undefined} className="sm:max-w-[425px]">
+			<DialogContent
+				aria-describedby={undefined}
+				className="max-w-xs sm:max-w-[425px] overflow-auto [@media(max-height:425px)]:max-h-36 sm:max-h-screen"
+			>
 				<DialogHeader>
-					<DialogTitle>Edit password</DialogTitle>
+					<DialogTitle>View password</DialogTitle>
 				</DialogHeader>
 				<Separator />
 				{selected ? (
 					<div className="grid gap-4">
 						<div className="grid grid-cols-2">
 							<p className="font-bold">App name</p>
-							<p>{selected.app_name}</p>
+							<p className=" overflow-auto">{selected.app_name}</p>
 						</div>
 						<div className="grid grid-cols-2">
 							<p className="font-bold">Username</p>
-							<p>{selected.username}</p>
+							<p className=" overflow-auto">{selected.username}</p>
 						</div>
 						<div className="grid grid-cols-2">
 							<p className="font-bold">Email</p>
-							<p>{selected.email}</p>
+							<p className=" overflow-auto">{selected.email}</p>
 						</div>
 						<div className="grid grid-cols-2">
 							<p className="font-bold">Phone Number</p>
-							<p>{selected.phone_number}</p>
+							<p className=" overflow-auto">{selected.phone_number}</p>
 						</div>
 						<div className="grid grid-cols-2">
 							<p className="font-bold">Password</p>
 							<PasswordField value={selected.password} id={selected.id} />
 						</div>
-						{selected?.additional ? (
+						{selected?.additional &&
+						Object.entries(JSON.parse(selected.additional))?.length > 0 ? (
 							<>
 								<Separator />
 								<h3 className="font-bold italic">Additional</h3>
@@ -81,7 +85,11 @@ export const ViewPassword: FC<IViewPassword> = ({
 				)}
 				<Separator />
 				<DialogFooter>
-					<Button variant="secondary" onClick={() => onEdit(selected)}>
+					<Button
+						className="mt-2 sm:mt-0"
+						variant="secondary"
+						onClick={() => onEdit(selected)}
+					>
 						<Pencil />
 						Edit
 					</Button>

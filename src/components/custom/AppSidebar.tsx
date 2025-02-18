@@ -8,7 +8,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { ChevronsUpDown } from 'lucide-react';
+import { ChevronsUpDown, HomeIcon } from 'lucide-react';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -19,6 +19,7 @@ import { SignoutButton } from './SignoutButton';
 import { Avatar, AvatarFallback } from '../ui/avatar';
 import { IUserPaylaod } from '@/utils/user-payload';
 import { IUser } from '@/models/user';
+import Link from 'next/link';
 
 interface IAppSidebar {
 	username: IUserPaylaod['username'];
@@ -29,9 +30,18 @@ interface IAppSidebar {
 export function AppSidebar({ username, firstName, lastName }: IAppSidebar) {
 	return (
 		<Sidebar>
-			<SidebarHeader />
+			<SidebarHeader>
+				<div className="m-2">
+					<p className="text-3xl text-blue-500 font-bold">Safe Flow</p>
+				</div>
+			</SidebarHeader>
 			<SidebarContent>
-				<SidebarGroup />
+				<SidebarGroup>
+					<Link className="hover:bg-slate-100 p-2 flex" href="/">
+						<HomeIcon className="mr-2" />
+						Home
+					</Link>
+				</SidebarGroup>
 				<SidebarGroup />
 			</SidebarContent>
 			<SidebarFooter>

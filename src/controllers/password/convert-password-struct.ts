@@ -21,6 +21,8 @@ export const convertPasswordStruct = (
 		email: password?.email,
 		password: password?.password,
 		phone_number: password?.phone_number,
-		updated_at: password?.updated_at?.toDate()?.toISOString(),
+		updated_at: new Date(
+			password?.updated_at?.toDate()?.toISOString()
+		).toLocaleString(),
 	}));
 };

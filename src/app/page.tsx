@@ -44,7 +44,7 @@ export default async function Home() {
 				<div className="flex h-14 items-center px-4">
 					<div className="flex flex-1 items-center justify-between gap-2">
 						<div>
-							<p className="text-lg text-blue-500 font-bold">Safe Flow</p>
+							<p className="text-3xl text-blue-500 font-bold">Safe Flow</p>
 						</div>
 						<div className=" md:w-auto md:flex-none">
 							<DropdownMenu>
